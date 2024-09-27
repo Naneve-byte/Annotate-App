@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const AuthLayout = () => {
+const Camera = () => {
   return (
     <View>
-      <Text>AuthLayout</Text>
+      <Text>Camera</Text>
     </View>
   )
 }
 
-export default AuthLayout
+export default Camera
 
 const styles = StyleSheet.create({})

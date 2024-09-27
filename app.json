@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "MyApp",
-    "slug": "MyApp",
-    "scheme": "your-app-scheme", 
+    "name": "Trisakti",
+    "slug": "trisakti",
+    "scheme": "trisakti", 
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

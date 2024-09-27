@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const AuthLayout = () => {
+const Gallery = () => {
   return (
     <View>
-      <Text>AuthLayout</Text>
+      <Text>Gallery</Text>
     </View>
   )
 }
 
-export default AuthLayout
+export default Gallery
 
 const styles = StyleSheet.create({})
