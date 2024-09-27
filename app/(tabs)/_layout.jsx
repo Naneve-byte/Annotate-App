@@ -1,4 +1,5 @@
-import { Image, Text, View } from 'react-native';
+/* eslint-disable react/prop-types */
+import { Image, View } from 'react-native';
 import React from 'react';
 
 import { Tabs } from 'expo-router';
@@ -14,9 +15,9 @@ const TabIcon = ({ icon, color, name, focused}) => {
                 tintColor={color}
                 className="w-6 h-6"
             />
-            <Text className={`${ focused ? 'font-psemibold' : 'font-pregular'} text-xs`} style={{ color:color }}>
+            {/**<Text className={`${ focused ? 'font-psemibold' : 'font-pregular'} text-xs`} style={{ color:color }}>
                 {name}
-            </Text>
+            </Text>**/}
         </View>
         
     )
@@ -29,8 +30,8 @@ const TabsLayout = () => {
         <>
             <Tabs screenOptions={{
                 tabBarShowLabel:false,
-                tabBarActiveTintColor: '#FFA001',
-                tabBarInactiveTintColor: '#CDCE0',
+                tabBarActiveTintColor: '#bdc5c3 ',
+                tabBarInactiveTintColor: '#bdc5c3',
                 tabBarStyle: {
                     backgroundColor: '#0c4ee7',
                     borderTopWidth: 1,
