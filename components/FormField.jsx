@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'reac
 import React, { useState } from 'react'
 import { icons } from '../constants'
 
-const FormField = ({ title, value, placholder, handleChangeText, otherStyles, ...props}) => {
+const FormField = ({ title, value, placholder, handleChangeText, otherStyles,  ...props}) => {
     
     const [showPassword, setShowPassword] = useState(false)
 
