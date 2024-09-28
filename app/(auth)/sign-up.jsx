@@ -22,18 +22,20 @@ const SignUp = () => {
   const submit = () => {}
  
   return (
-    <SafeAreaView claseName="bg-primary h-full">
+    <SafeAreaView className="bg-primary h-full">
       <ScrollView>
-        <View claseName="w-full justify-center items-center h-full px4 my-6">
-        <Image
-          source={images.iconTrisakti}
-          className="w-[115px] h-[90px] mb-2"
-          resizeMode='contain'
-          />
-
-          <Text claseName = "text-2xl text-black text-semi-blod mt-10 ">
+        <View className=" w-full justify-center items-center h-full px4 my-3">
+          <View>
+          <Text className = "text-2xl text-black text-semi-blod mt-10 ">
             Sign Up
           </Text>
+          <Image
+          source={images.}
+          className="w-[250px] h-[200px] mb-16"
+          resizeMode='contain'
+          />
+          </View>
+          
 
           <FormField  
             title= "Username"
@@ -80,8 +82,8 @@ const SignUp = () => {
           containerStyle="mt-7"
           isLoading={isSubmitting}/>
 
-          <View claseName="justify-center pt-5 flex-row gap-2">
-            <Text  claseName="text-lg text-gray-100">
+          <View className="justify-center pt-5 flex-row gap-2">
+            <Text  className  ="text-lg text-gray-100">
               Alreadyhave an account?
             </Text>
             <Link href="/sign-up" className="text-lg text-secondary">Sign U p</Link>
