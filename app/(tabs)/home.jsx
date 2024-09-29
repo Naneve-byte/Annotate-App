@@ -1,6 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import React, { useState, useEffect } from 'react'; // Pastikan untuk mengimpor useEffect
 import { supabase } from '../../lib/supabase';
+import { images } from '../../constants';
+import { Link, useRouter } from 'expo-router'; // pastikan router diimpor
+
 
 const Home = () => {
   const [userName, setUserName] = useState('');
@@ -45,14 +48,53 @@ const Home = () => {
   }, []); // Dependency array kosong agar useEffect hanya dipanggil sekali
 
   return (
-    <View>
+    <SafeAreaView className="bg-white h-full">
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <View className="flex flex-row justify-center items-center pt-8">
+        <Image
+              source={images.iconTrisakti}
+              className="w-[60px] h-[40px]"
+              resizeMode='contain'
+            />
+
+            <Text className="text-lg text-black font-bold">
+              TrisaktiAnnotate
+            </Text>
+        </View>
+        <View className=" justify-center items-center pt-10">
+
+        <Text className="text-lg text-blue text-sky-700 ">
+              Welcome to Trisakti Annote App
+            </Text>
+            <Image
+              source={images.iconTrisakti}
+              className="w-[115px] h-[90px] mb-4 "
+              resizeMode='contain'
+            />
+            <View>
+              {error ? (
+                <Text className="text-2xl">Error: {error}</Text>
+              ) : (
+              <Text>Welcome, {userName}!</Text>
+              )}
+              </View>
+            <View className="justify-center flex-row gap-2 ">
+              <Link href="/annotate" className="text-3xl text-gray-400">
+              Lets get started
+              
+              </Link>
+            </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+    /*<View>
       {error ? (
         <Text>Error: {error}</Text>
       ) : (
         <Text>Welcome, {userName}!</Text>
       )}
       <Text>awdwdaw</Text>
-    </View>
+    </View>*/
   );
 }
 

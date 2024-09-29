@@ -12,7 +12,7 @@ const FormField = ({
   selectedValue,
   handleValueChange,
   items = [],
-  noRounded = false,  // Add noRounded prop
+  noRounded = false,  
   otherStyles,
   ...props
 }) => {
@@ -24,7 +24,6 @@ const FormField = ({
       {!isDropdown ? (
         <View
           className={`border-2 border-gray-300 w-full h16 px-4 bg-white-100 items-center flex-row ${noRounded ? '' : 'rounded-lg'}`}
-          // Apply conditional class based on noRounded prop
         >
           <TextInput
             className="flex-1 text-black"
