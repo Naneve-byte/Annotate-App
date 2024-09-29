@@ -72,11 +72,12 @@ const Home = () => {
               resizeMode='contain'
             />
             <View>
-              {error ? (
+            <Text>Welcome, Boris !</Text>
+              {/*{error ? (
                 <Text className="text-2xl">Error: {error}</Text>
               ) : (
               <Text>Welcome, {userName}!</Text>
-              )}
+              )}*/}
               </View>
             <View className="justify-center flex-row gap-2 ">
               <Link href="/annotate" className="text-3xl text-gray-400">
