@@ -20,40 +20,33 @@ const SignUp = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const submit = async () => {
-    const { username, email, password, firstname, lastname } = form;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prevForm) => ({
+      ...prevForm,
+      [name]: value
+    }));
+  };
 
-    // Cek apakah ada field yang kosong
-    if (!username || !email || !password || !firstname || !lastname) {
-        Alert.alert('Error', 'All fields are required.');
-        return;
-    }
-
+  const submit = async (e) => {
+    e.preventDefault();
+    const { username, email, password, firstname, lastname, role } = form;
     setIsSubmitting(true);
 
-    // Daftar dengan Supabase
-    const { data, error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-            data: {
-                username,
-                firstname,
-                lastname,
-                role: form.role,
-            },
-        },
-    });
+    const { data, error } = await supabase
+      .from('users')
+      .insert([
+        { username, email, password, firstname, lastname, role }
+      ]);
 
     if (error) {
-        Alert.alert('Sign Up Failed', error.message); // Menampilkan pesan error
+      console.error('Error inserting data:', error);
     } else {
-        Alert.alert('Success', 'Account created successfully.');
+      console.log('Data inserted successfully:', data);
     }
 
     setIsSubmitting(false);
-};
-
+  };
 
 
 
