@@ -21,10 +21,10 @@ const SignUp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const submit = async () => {
-    const { username, email, password, firstname, lastname, role } = form;
+    const { username, email, password, firstname, lastname } = form;
 
     // Cek apakah ada field yang kosong
-    if (!username || !email || !password || !firstname || !lastname || !role) {
+    if (!username || !email || !password || !firstname || !lastname) {
         Alert.alert('Error', 'All fields are required.');
         return;
     }
@@ -32,48 +32,27 @@ const SignUp = () => {
     setIsSubmitting(true);
 
     // Daftar dengan Supabase
-    const { user, error: signUpError } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
         email,
         password,
         options: {
             data: {
-                userName: username, // Ganti dengan userName
-                firstName: firstname, // Ganti dengan firstName
-                lastName: lastname, // Ganti dengan lastName
-                role, // Tetap sama
+                username,
+                firstname,
+                lastname,
+                role: form.role,
             },
         },
     });
 
-    if (signUpError) {
-        Alert.alert('Sign Up Failed', signUpError.message);
-        setIsSubmitting(false);
-        return; // Keluar jika ada kesalahan
-    }
-
-    // Simpan profil pengguna ke tabel users
-    const { error: profileError } = await supabase
-        .from('users')
-        .insert([{
-            id: user.id, // Gunakan ID pengguna yang baru saja terdaftar
-            created_at: new Date().toISOString(), // Mengatur waktu pembuatan
-            userName: username, // Ganti dengan userName
-            email, // Tetap sama
-            password, // Password tidak perlu disimpan di database
-            firstName: firstname, // Ganti dengan firstName
-            lastName: lastname, // Ganti dengan lastName
-            role, // Tetap sama
-        }]);
-
-    if (profileError) {
-        Alert.alert('Profile Insertion Error', profileError.message);
+    if (error) {
+        Alert.alert('Sign Up Failed', error.message); // Menampilkan pesan error
     } else {
         Alert.alert('Success', 'Account created successfully.');
     }
 
     setIsSubmitting(false);
 };
-
 
 
 
