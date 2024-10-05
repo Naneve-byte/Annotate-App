@@ -58,35 +58,21 @@ const TabsLayout = () => {
             />
 
                 <Tabs.Screen 
-                    name="camera"
+                    name="cameracomponent"
                     options={{
-                        title: 'Camera',
+                        title: 'CameraComponent',
                         headerShown: false,
                         tabBarIcon: ({ color, focused}) => (
                             <TabIcon 
                                 icon={icons.camera}
                                 color={color}
-                                name="Camera"
+                                name="CameraComponent"
                                 focused={focused}
                             />
                         )
                     }}
                     />
-                <Tabs.Screen 
-                    name="video"
-                    options={{
-                        title: 'Video',
-                        headerShown: false,
-                        tabBarIcon: ({ color, focused}) => (
-                            <TabIcon 
-                                icon={icons.video}
-                                color={color}
-                                name="Video"
-                                focused={focused}
-                            />
-                        )
-                    }}
-                    />
+                
                 <Tabs.Screen 
                     name="gallery"
                     options={{

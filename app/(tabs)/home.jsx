@@ -50,7 +50,7 @@ const Home = () => {
   return (
     <SafeAreaView className="bg-white h-full">
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <View className="flex flex-row justify-center items-center pt-8">
+        <View className="flex flex-row justify-center items-center pt-8 ">
         <Image
               source={images.iconTrisakti}
               className="w-[60px] h-[40px]"
@@ -61,18 +61,19 @@ const Home = () => {
               TrisaktiAnnotate
             </Text>
         </View>
+        <View className="w-full border-b border-gray-400" />
         <View className=" justify-center items-center pt-10">
 
-        <Text className="text-lg text-blue text-sky-700 ">
+        <Text className="text-lg text-blue text-sky-700 mt-3">
               Welcome to Trisakti Annote App
             </Text>
             <Image
-              source={images.iconTrisakti}
-              className="w-[115px] h-[90px] mb-4 "
+              source={images.profil}
+              className="w-[115px] h-[90px] my-5 "
               resizeMode='contain'
             />
             <View>
-            <Text>Welcome, Boris !</Text>
+            <Text className="border-*-4">Welcome, Boris !</Text>
               {/*{error ? (
                 <Text className="text-2xl">Error: {error}</Text>
               ) : (
@@ -85,6 +86,7 @@ const Home = () => {
               
               </Link>
             </View>
+            
         </View>
       </ScrollView>
     </SafeAreaView>

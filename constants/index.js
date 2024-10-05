@@ -1,4 +1,3 @@
-import { createClient } from '@supabase/supabase-js';
 import icons from "./icons";
 import images from "./images"
 export const supabaseUrl = 'https://rfvsyoxozsrmddgmuiqf.supabase.co'
